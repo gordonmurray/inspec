@@ -1,15 +1,25 @@
-describe os.family do
-  it { should eq 'debian' }
-end
+control 'ubuntu' do
 
-describe os.name do
-   it { should eq 'ubuntu' }
-end
+    impact 1.0
 
-describe os.release do
-   it { should eq '18.04' }
-end
+    title 'Make sure a system is using Ubuntu version 18.04'
 
-describe os.arch do
-   it { should eq 'x86_64' }
+    desc 'Making sure our systems are all Ubuntu 18.04'
+    
+    describe os.family do
+        it { should eq 'debian' }
+    end
+
+    describe os.name do
+        it { should eq 'ubuntu' }
+    end
+
+    describe os.release do
+        it { should eq '18.04' }
+    end
+
+    describe os.arch do
+        it { should eq 'x86_64' }
+    end
+    
 end
